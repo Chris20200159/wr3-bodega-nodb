@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Visual mock-up <a href="https://www.figma.com/file/T6QhHOUVUl7loy687poxtr/First-Project-No-DB?node-id=0%3A1">Here</a>
 
-## Available Scripts
+#WR3's Glorious TO DO LIST! 
 
-In the project directory, you can run:
+## MVP
+Description: A bodega store app that allows user to buy corner store items online for home delivery.
+</br>
 
-### `npm start`
+npx create-react-app project-bodega
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Features:
+- User can add grocery item
+- User can view current shopping list
+- User can delete grocery item
+- User can edit quantity of grocery item in shopping list
+- User can check out
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### SERVER
+Dependencies:
+-express
 
-### `npm test`
+Endpoints:
+-app.get("/api/products")
+-app.post("/api/products")
+-app.delete("/api/products/:id")
+-app.put("/api/products/complete/:id")
+-app.put('/api/products/edit/:id")
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Structure:
+-server/
+  -index.js
+  -controller.js
+  -products.json
 
-### `npm run build`
+ -Update package.json
+  -"main": "./server/index.js",
+  -"proxy": "http://localhost:4004", 
+//This connects our backend with our frontend
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### CLIENT
+Dependencies;
+- axios
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Structure:
+- src/
+  - app.js
+  - app.css
+  - reset.css
+  - components/
+    - header.js
+    - header.css
+    - form.js
+    - form.css
+    - list.js
+    - list.css
+    - task.js
+    - task.css
+    
+-import each css into their component; header.css into header.js
+-import each component into app.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### ICE BOX
+-Live form-of-payment buttons
+-Check out with redirect page that allows user to enter contact info, payment info, etc.
+-Image of items instead of just name/title. ("Banana".jpeg instead of just Banana)
