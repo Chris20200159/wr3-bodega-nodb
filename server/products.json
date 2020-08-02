@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Milk",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "title": "Eggs",
+    "completed": false
+  },
+  {
+    "id": 3,
+    "title": "Bread",
+    "completed": false
+  },
+  {
+    "id": 4,
+    "title": "Rice",
+    "completed": false
+  },
+  {
+    "id": 5,
+    "title": "Beans",
+    "completed": false
+  },
+  {
+    "id": 6,
+    "title": "Bananas",
+    "completed": false
+  },
+  {
+    "id": 7,
+    "title": "Cat food",
+    "completed": false 
+  },
+  {
+    "id": 8,
+    "title": "Chopped cheese with extra peppers",
+    "completed": false
+  },
+  {
+    "id": 9,
+    "title": "Batteries",
+    "completed": false
+  },
+  {
+    "id": 10,
+    "title": "Coffee",
+    "completed": false
+  }
+]
