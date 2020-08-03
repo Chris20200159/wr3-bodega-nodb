@@ -4,6 +4,7 @@ import './reset.css';
 import './App.css';
 import './component/List.css';
 import './component/Todo.css';
+import './component/Form.css';
 import Header from './component/Header';
 import List from './component/List';
 import Form from './component/Form';
@@ -15,7 +16,7 @@ class App extends Component {
       products: []
     }
     this.addProduct = this.addProduct.bind(this)
-
+    this.deleteProduct = this.deleteProduct.bind(this)
 
   }
 
@@ -41,6 +42,15 @@ class App extends Component {
         products: res.data
       })
     }).catch( err => console.log(err))
+  };
+
+  deleteProduct = (id) => {
+  axios.delete(`/api/products/${id}`)
+  .then(res => {
+    this.setState({
+      products: res.data
+      })
+    }).catch( err => console.log(err))
   }
 
   render() {
@@ -48,7 +58,9 @@ class App extends Component {
       <div>
         <Header/>
         <Form addProduct={this.addProduct}/>
-        <List products={this.state.products}/>
+        <List 
+        deleteProduct={this.deleteProduct} 
+        products={this.state.products}/>
 
       </div>
     )};

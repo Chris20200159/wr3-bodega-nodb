@@ -23,7 +23,7 @@ class Form extends Component {
         }}>
           <input value={this.state.title} 
           type="text" 
-          placeholder="Add a new product.."
+          placeholder="Add to shopping list.."
           onChange={(e) => this.titleHandler(e)}/>
           <button className="form-elem form-btn">Add Item</button>
 

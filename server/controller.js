@@ -19,5 +19,14 @@ module.exports = {
       id++;
       res.status(200).send(products);
     }
+  }, 
+  deleteProduct: (req, res) => {
+    const index = products.findIndex( product => product.id === +req.params.id)
+    if (index === -1){
+      res.status(404).send('Product item not found in list')
+    } else {
+      product.splice(index, 1)
+      res.status(200).send(products)
+    }
   }
 }

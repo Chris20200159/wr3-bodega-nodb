@@ -13,3 +13,12 @@
   font-size: 18px;
   font-family: 'Fugaz One';
 } 
+
+.btn-container {
+  display: flex;
+  position: relative;
+}
+
+.product-btn {
+  margin-left: 5px;
+}

@@ -12,3 +12,17 @@
   font-size: 51px;
   color: #F2C94C;
 }
+
+.btn-container {
+  display: flex;
+  position: relative;
+}
+
+.checkout-btn {
+  margin-right: 5px;
+  padding: 5px 15px;
+  font-family: 'Fugaz One';
+  color: #de1b1b;
+  background-color:  #F2C94C;
+  box-shadow: 3px 3px 6px 2px #000000;
+}
