@@ -6,7 +6,7 @@ import './component/List.css';
 import './component/Todo.css';
 import Header from './component/Header';
 import List from './component/List';
-// import Form from './component/Form';
+import Form from './component/Form';
 
 class App extends Component {
   constructor(){
@@ -14,6 +14,9 @@ class App extends Component {
     this.state = {
       products: []
     }
+    this.addProduct = this.addProduct.bind(this)
+
+
   }
 
   componentDidMount(){
@@ -30,11 +33,21 @@ class App extends Component {
    ).catch( err => console.log(err))
   };
 
+  addProduct = (e, title) => {
+    e.preventDefault()
+    axios.post('/api/products', {title})
+    .then( res => {
+      this.setState({
+        products: res.data
+      })
+    }).catch( err => console.log(err))
+  }
+
   render() {
     return (
       <div>
         <Header/>
-        {/* <Form/> */}
+        <Form addProduct={this.addProduct}/>
         <List products={this.state.products}/>
 
       </div>
