@@ -34,7 +34,7 @@ Structure:
 
  -Update package.json
   -"main": "./server/index.js",
-  -"proxy": "http://localhost:5004", 
+  -"proxy": "http://localhost:####", 
 //This connects our backend with our frontend
 
 ### CLIENT
