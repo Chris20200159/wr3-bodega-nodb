@@ -1,0 +1,14 @@
+.my-header {
+  height: 20vh;
+  width: 100vw;
+  background-color: #de1b1b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-title {
+  font-family: 'Fugaz One';
+  font-size: 51px;
+  color: #F2C94C;
+}
