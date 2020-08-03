@@ -1,4 +1,5 @@
 const products = require ('./products.json');
+const { response } = require('express');
 let id = 6;
 
 module.exports = {
@@ -25,17 +26,18 @@ module.exports = {
     if (index === -1){
       res.status(404).send('Product item not found in list')
     } else {
-      product.splice(index, 1)
+      products.splice(index, 1)
       res.status(200).send(products)
     }
   },
-  editProduct: (req, res) => {
-    const {id} = req.params
-    const {title} = req.body
-    const index = product.findIndex((element) => {
-      return elememnt.id === +id
-    })
-    product[index].title = title
-    return res.status(200).send(products)
+  checkoutProduct: (req, res) => {
+    const {id} = req. params;
+    const index = products.findIndex(product => product.id === +id);
+    if( index === -1) {
+    res.status(404). send('Product item not found in list')
+    } else {
+    products[index].completed = !products[index].completed
+    res.status(200).send(products)
+    }
   }
 }

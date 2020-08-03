@@ -17,7 +17,7 @@ class App extends Component {
     }
     this.addProduct = this.addProduct.bind(this)
     this.deleteProduct = this.deleteProduct.bind(this)
-    this.editProduct=this.editProduct.bind(this)
+    this.checkoutProduct=this.checkoutProduct.bind(this)
 
   }
 
@@ -54,8 +54,8 @@ class App extends Component {
     }).catch( err => console.log(err))
   };
 
-  editProduct = (id, title) => {
-    axios.put(`/api/products/${id}`, {title})
+  checkoutProduct = (id) => {
+    axios.put(`/api/products/complete/${id}`)
     .then((response) => {
       this.setState({product: response.data})
     })
@@ -63,13 +63,17 @@ class App extends Component {
   }
 
   render() {
+    const completedProducts = this.state.products.reduce((acc, cur) => {
+    return (cur.completed ? acc + 1 : acc + 0)
+    }, 0)
+    console.log(completedProducts)
     return (
       <div>
-        <Header/>
+        <Header completed={completedProducts}/>
         <Form addProduct={this.addProduct}/>
         <List 
         deleteProduct={this.deleteProduct}
-        editProduct={this.editProduct} 
+        checkoutProduct={this.checkoutProduct} 
         products={this.state.products}/>
 
       </div>

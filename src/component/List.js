@@ -6,7 +6,7 @@ const List = (props) => {
     return <Todo 
                 key={product.id} 
                 deleteProduct={props.deleteProduct}
-                editProduct={props.editProduct}
+                checkoutProduct={props.checkoutProduct}
                 product={product}/>
   })
 

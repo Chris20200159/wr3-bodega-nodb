@@ -21,4 +21,7 @@
 
 .product-btn {
   margin-left: 5px;
+  background-color: #de1b1b;
+  color: #F2C94C;
+  border-radius: 25%
 }
