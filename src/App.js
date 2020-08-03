@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './reset.css';
 import './App.css';
-import './index.css';
 import './component/List.css';
 import './component/Todo.css';
 import './component/Form.css';
@@ -18,6 +17,7 @@ class App extends Component {
     }
     this.addProduct = this.addProduct.bind(this)
     this.deleteProduct = this.deleteProduct.bind(this)
+    this.editProduct=this.editProduct.bind(this)
 
   }
 
@@ -52,6 +52,14 @@ class App extends Component {
       products: res.data
       })
     }).catch( err => console.log(err))
+  };
+
+  editProduct = (id, title) => {
+    axios.put(`/api/products/${id}`, {title})
+    .then((response) => {
+      this.setState({product: response.data})
+    })
+    .catch(err => console.log(err))
   }
 
   render() {
@@ -60,7 +68,8 @@ class App extends Component {
         <Header/>
         <Form addProduct={this.addProduct}/>
         <List 
-        deleteProduct={this.deleteProduct} 
+        deleteProduct={this.deleteProduct}
+        editProduct={this.editProduct} 
         products={this.state.products}/>
 
       </div>

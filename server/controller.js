@@ -1,5 +1,5 @@
 const products = require ('./products.json');
-let id = 11;
+let id = 6;
 
 module.exports = {
   getProducts: (req, res) => {
@@ -28,5 +28,14 @@ module.exports = {
       product.splice(index, 1)
       res.status(200).send(products)
     }
+  },
+  editProduct: (req, res) => {
+    const {id} = req.params
+    const {title} = req.body
+    const index = product.findIndex((element) => {
+      return elememnt.id === +id
+    })
+    product[index].title = title
+    return res.status(200).send(products)
   }
 }

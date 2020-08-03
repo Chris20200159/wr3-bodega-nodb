@@ -7,6 +7,9 @@ const Todo = (props) => {
       <button 
         className="product-btn" 
         onClick={() => props.deleteProduct(props.product.id)}>x</button>
+        <button
+        className="product-btn"
+        onClick={() => props.editProduct(props.product.id)}>Edit</button>
     </div>
 
 
