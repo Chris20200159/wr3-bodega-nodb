@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './reset.css';
 import './App.css';
+import './index.css';
 import './component/List.css';
 import './component/Todo.css';
 import './component/Form.css';

@@ -1,5 +1,6 @@
 .form-container {
   width: 100vw;
+  margin: 40px;
   display: flex;
   justify-content: left;
 }
@@ -9,7 +10,7 @@
 }
 
 .form-btn {
-  padding: 5px 15px;
+  padding: 10px 15px;
   font-family: 'Fugaz One';
   color: #F2C94C;
   background-color: #de1b1b;
